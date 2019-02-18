@@ -15,13 +15,22 @@ return [0, 1]. */
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums,target){
-    var maps = {};
-    for (var i=0;i<nums.length;i++){
-        temp = nums[i];
+var twoSum = function (nums, target) {
+     for (var i = 0; i < nums.length; i++){
+        var temp = nums[i];
         maps[temp] = i;
     }
-    for (var i=0;i<nums.length;i++){
+    for (var i = 0; i < nums.length; i++) {
         
+        // console.log(maps);
+        var index = target - nums[i];
+        if (maps[index]) {
+            return (i, maps[index]);
+        }
+
     }
+
 }
+const nums = [2, 1, 7, 13, 11, 7, 15];
+const target = 9;
+twoSum(nums, target);
