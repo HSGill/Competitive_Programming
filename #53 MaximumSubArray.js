@@ -5,13 +5,14 @@
 var maxSubArray = function(nums) {
   let max =-Number.MAX_VALUE ;
   for(let i=0;i<nums.length;i++){
-      let maxStart = 0;
+    let maxStart = 0;
+
       for(let j=i;j<nums.length;j++){
           maxStart += nums[j];
        max = Math.max(max,maxStart);
       }
   }
- return max;
+return  console.log (max);
 }     
 
 /* function getMaxSubSum(arr) {
