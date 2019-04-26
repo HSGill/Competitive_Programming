@@ -15,8 +15,7 @@ var threeSum = function (nums) {
             if ( twoSum in map) {
                 resultArray[index] = [twoSum, nums[i], nums[j]];
                 index++;
-                //console.log(resultArray[index]);
-            }
+                        }
             else {
                 map[key] = nums[j];
                 key++;
