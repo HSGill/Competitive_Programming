@@ -10,22 +10,24 @@ var threeSum = function (nums) {
         let key=0;
         for (j = i + 1; j < nums.length; j++) {
             let twoSum = -(nums[i] + nums[j]);
-
-
-            if ( twoSum in map) {
-                resultArray[index] = [twoSum, nums[i], nums[j]];
-                index++;
-                //console.log(resultArray[index]);
+            if(twoSum == -0){
+                twoSum =0;
             }
+
+
+            if ( map[twoSum] ) {
+                resultArray.push( [twoSum, nums[i], nums[j]]);
+             //   index++;
+                        }
             else {
-                map[key] = nums[j];
+                map[nums[j]] = key;
                 key++;
             }
 
         }
-      
+        return resultArray;
+
     }
-  return resultArray;
 };
 
 console.log(threeSum([-1, 0, 1, 2, -1, -4]));
